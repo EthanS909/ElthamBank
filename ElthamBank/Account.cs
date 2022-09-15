@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ElthamBank
 {
-    class Account
+    abstract class Account
     {
         private double balance = 0;
         private string accName;
@@ -15,7 +15,7 @@ namespace ElthamBank
             return balance;
         }
 
-        public void changeBal(double funds)
+        public void addBal(double funds)
         {
             balance += funds;
         }

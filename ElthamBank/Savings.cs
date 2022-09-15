@@ -12,5 +12,10 @@ namespace ElthamBank
         {
             IR = iR;
         }
+
+        public void withdraw()
+        {
+
+        }
     }
 }
