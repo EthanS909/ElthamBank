@@ -4,13 +4,11 @@ using System.Text;
 
 namespace ElthamBank
 {
-    class Current : Account
+    class Business : Account
     {
-        private bool canCashCheck;
-
-        public Current(double bal, string accName, string accNum) : base(bal, accName, accNum)
+        public Business(double bal, string accName, string accNum) : base(bal, accName, accNum)
         {
-            canCashCheck = true;
+
         }
         public void withdraw(double amount)
         {

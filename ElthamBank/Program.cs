@@ -10,6 +10,7 @@ namespace ElthamBank
             string accName;
             string accNum;
             double accBal;
+            double withdraw;
 
             Console.WriteLine("Enter Account Type");
             accType = Console.ReadLine();
@@ -25,12 +26,55 @@ namespace ElthamBank
 
             if (accType == "Savings")
             {
-                Console.WriteLine("Enter Account Intrest Rate");
+                Console.WriteLine("Enter Account Intrest Rate %");
                 double iR = Convert.ToDouble(Console.ReadLine());
-                Savings s1 = new Savings(iR);
-                s1.setName(accName);
-                s1.setAccNum(accNum);
-                s1.changeBal(accBal);
+                Savings acc = new Savings(iR, accBal, accName, accNum);
+
+                Console.WriteLine("Enter Amount to Withdraw");
+                withdraw = Convert.ToDouble(Console.ReadLine());
+                acc.withdraw(withdraw);
+
+                Console.WriteLine("Enter Amount of Years to Fast Forward");
+                int years = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("New Balance: £{0}", acc.FastForward(years);
+            }
+
+            if (accType == "Student")
+            {
+                Console.WriteLine("Enter Overdraft Limit");
+                double overdraft = Convert.ToDouble(Console.ReadLine());
+                Student acc = new Student(overdraft, accBal, accName, accNum);
+
+                Console.WriteLine("Enter Amount to Withdraw");
+                withdraw = Convert.ToDouble(Console.ReadLine());
+                acc.withdraw(withdraw);
+            }
+
+            if (accType == "Current")
+            {
+                Current acc = new Current(accBal, accName, accNum);
+
+                Console.WriteLine("Enter Amount to Withdraw");
+                withdraw = Convert.ToDouble(Console.ReadLine());
+                acc.withdraw(withdraw);
+            }
+
+            if (accType == "Business")
+            {
+                if (accBal >= 1000000)
+                {
+                    Business acc = new Business(accBal, accName, accNum);
+                    Console.WriteLine("Enter Amount to Withdraw");
+                    withdraw = Convert.ToDouble(Console.ReadLine());
+                    acc.withdraw(withdraw);
+                }
+                else
+                {
+                    Console.WriteLine("Insuficient Funds to Create Business Account");
+                }
+                
+
+                
             }
         }
     }
