@@ -36,7 +36,7 @@ namespace ElthamBank
 
                 Console.WriteLine("Enter Amount of Years to Fast Forward");
                 int years = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("New Balance: £{0}", acc.FastForward(years);
+                Console.WriteLine("New Balance: £{0:0.00}", acc.fastForward(years));
             }
 
             if (accType == "Student")

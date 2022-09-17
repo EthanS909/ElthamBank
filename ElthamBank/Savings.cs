@@ -29,10 +29,12 @@ namespace ElthamBank
 
         public double fastForward(int years)
         {
-            for (int x = 0; years > 0; x++)
+            double interest = IR / 100;
+            for (int x = 0; years > x; x++)
             {
-                return getBal();
+                changeBal(getBal() * interest);
             }
+            return getBal();
         }
     }
 }
