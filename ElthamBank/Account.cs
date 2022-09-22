@@ -9,12 +9,13 @@ namespace ElthamBank
         private double balance = 0;
         private string accName;
         private string accNum;
+        private int age;
 
-        public Account(double balance, string accName, string accNum)
+        public Account(double balance, string accName, int age)
         {
             this.balance = balance;
             this.accName = accName;
-            this.accNum = accNum;
+            this.age = age;
         }
 
         public double getBal()

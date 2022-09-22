@@ -8,7 +8,7 @@ namespace ElthamBank
     {
         private double overdraft;
 
-        public Student(double overdraft, double bal, string accName, string accNum) : base(bal, accName, accNum)
+        public Student(double overdraft, double bal, string accName, int age) : base(bal, accName, age)
         {
             this.overdraft = overdraft;
         }

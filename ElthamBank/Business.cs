@@ -6,7 +6,7 @@ namespace ElthamBank
 {
     class Business : Account
     {
-        public Business(double bal, string accName, string accNum) : base(bal, accName, accNum)
+        public Business(double bal, string accName, int age) : base(bal, accName, age)
         {
 
         }

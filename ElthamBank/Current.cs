@@ -8,7 +8,7 @@ namespace ElthamBank
     {
         private bool canCashCheck;
 
-        public Current(double bal, string accName, string accNum) : base(bal, accName, accNum)
+        public Current(double bal, string accName, int age) : base(bal, accName, age)
         {
             canCashCheck = true;
         }

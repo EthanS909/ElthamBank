@@ -8,11 +8,61 @@ namespace ElthamBank
         {
             string accType;
             string accName;
-            string accNum;
             double accBal;
             double withdraw;
+            int age;
+            string bankName;
 
-            Console.WriteLine("Enter Account Type");
+            bool exit = false;
+            string option;
+
+            do
+            {
+                Console.WriteLine("1 - Open New Account");
+                Console.WriteLine("2 - Withdraw");
+                Console.WriteLine("3 - Check Account Balance");
+                Console.WriteLine("4 - Fast Forward");
+                Console.WriteLine("5 - Exit");
+                option = Console.ReadLine();
+
+                if (option == "1")
+                {
+                    Console.WriteLine("Enter Bank Name");
+                    bankName = Console.ReadLine();
+
+                    Console.WriteLine("Enter Name");
+                    accName = Console.ReadLine();
+
+                    Console.WriteLine("Enter Age");
+                    age = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Enter Balance");
+                    accBal = Convert.ToDouble(Console.ReadLine());
+
+                    Bank b1 = new Bank(bankName, accName, age, accBal);
+                    b1.open(accBal, accName, age);
+
+                }
+                if (option == "2")
+                {
+
+                }
+                if (option == "3")
+                {
+
+                }
+                if (option == "4")
+                {
+
+                }
+                if (option == "5")
+                {
+                    exit = true;
+                }
+
+            } while (exit == false);
+
+            /*Console.WriteLine("Enter Account Type");
             accType = Console.ReadLine();
 
             Console.WriteLine("Enter Account Name");
@@ -72,10 +122,7 @@ namespace ElthamBank
                 {
                     Console.WriteLine("Insuficient Funds to Create Business Account");
                 }
-                
-
-                
-            }
+            }*/
         }
     }
 }

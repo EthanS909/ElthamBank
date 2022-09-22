@@ -9,7 +9,7 @@ namespace ElthamBank
     {
         private double IR;
 
-        public Savings(double iR, double bal, string accName, string accNum) : base(bal, accName, accNum)
+        public Savings(double iR, double bal, string accName, int age) : base(bal, accName, age)
         {
             IR = iR;
         }
