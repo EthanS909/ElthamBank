@@ -6,15 +6,18 @@ namespace ElthamBank
     {
         static void Main(string[] args)
         {
-            string accType;
+            string accType = "";
             string accName;
             double accBal;
             double withdraw;
             int age;
-            string bankName;
+            double IR = 0;
+            int overdraft = 0;
 
             bool exit = false;
             string option;
+
+            Bank b1 = new Bank();
 
             do
             {
@@ -27,25 +30,38 @@ namespace ElthamBank
 
                 if (option == "1")
                 {
-                    Console.WriteLine("Enter Bank Name");
-                    bankName = Console.ReadLine();
-
                     Console.WriteLine("Enter Name");
                     accName = Console.ReadLine();
 
                     Console.WriteLine("Enter Age");
                     age = Convert.ToInt32(Console.ReadLine());
 
+                    Console.WriteLine("Enter Account Type");
+                    accType = Console.ReadLine();
+
+                    if (accType == "Savings")
+                    {
+                        Console.WriteLine("Enter Interest Rate");
+                        IR = Convert.ToDouble(Console.ReadLine());
+                    }
+
+                    if (accType == "Student")
+                    {
+                        Console.WriteLine("Enter Overdraft Limit");
+                        overdraft = Convert.ToInt32(Console.ReadLine());
+                    }
+
                     Console.WriteLine("Enter Balance");
                     accBal = Convert.ToDouble(Console.ReadLine());
 
-                    Bank b1 = new Bank(bankName, accName, age, accBal);
-                    b1.open(accBal, accName, age);
+                    Console.WriteLine(b1.openAccount(accBal, accName, age, accType, IR, overdraft));
 
                 }
                 if (option == "2")
                 {
-
+                    Console.WriteLine("Enter Amount to Withdraw");
+                    withdraw = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine(b1.withdraw(withdraw, accType));
                 }
                 if (option == "3")
                 {
